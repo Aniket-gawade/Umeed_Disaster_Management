@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity_earthquake">
+
+
+
+
+
+    <ImageView
+
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.000
+"
+        app:srcCompat="@drawable/earthquale" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/imageView">
+
+        <TextView
+            android:id="@+id/pointone"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="50sp"
+            android:layout_height="wrap_content"
+            android:text=" If you are in a high rise building Move away from windows and outside walls.
+Stay in the building.
+DO NOT use the elevators. The electricity may go out, and the sprinkler systems may come on.
+If you are trapped, stay calm.
+\n\n\n
+Go to an open area away from trees, telephone poles, and buildings. Once in the open, get down low and stay there until the shaking stops.
+\n\n\n
+If you are in a car Stay in the car and set the parking brake. A car may jiggle violently on its springs, but it is a good place to stay until the shaking stops.
+\n\n\n
+
+When it is safe to begin driving again, watch for hazards created by the earthquake, such as breaks in the pavement, downed utility poles and wires, rising water levels, fallen overpasses, or collapsed bridges
+
+"
+            />
+
+    </ScrollView>
+
+
+</RelativeLayout>

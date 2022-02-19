@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group
+        android:checkableBehavior="single"
+        android:visible="true">
+        <item
+            android:id="@+id/nav_home"
+            android:title="@string/home"
+            android:visible="true" />
+        <item
+            android:id="@+id/nav_map"
+            android:title="@string/mapopt"
+            android:visible="true" />
+
+        <item
+            android:id="@+id/nav_emergency"
+            android:title="@string/emergency_contacts"
+            android:visible="true" />
+
+
+
+            <item
+                android:id="@+id/getdatarefresh"
+                android:title="@string/get_disaster_data"
+                android:visible="true" />
+            <item
+                android:id="@+id/nav_aid"
+                android:title="@string/first_aid"
+                android:visible="true" />
+
+
+
+
+</group>
+
+</menu>

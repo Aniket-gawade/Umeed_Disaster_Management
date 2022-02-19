@@ -1,0 +1,16 @@
+<resources>
+    <!--    <string name="app_name">Health Care</string>-->
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+    <string name="facebook_app_id">552167799361141</string>
+    <string name="fb_login_protocol_scheme">fb552167799361141</string>
+    <string name="photo">photo</string>
+    <string name="home">Home</string>
+    <string name="mapopt">Map</string>
+    <string name="emergency_contacts">Emergency Contacts</string>
+    <string name="first_aid">First Aid</string>
+    <string name="get_disaster_data">Get Disaster Data</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_maps1">MapsActivity1</string>
+</resources>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".cyclone">
+
+
+
+    <ImageView
+
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1000"
+        android:layout_marginTop="10dp"
+
+
+        app:srcCompat="@drawable/cyclone_f" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/imageView">
+
+        <TextView
+            android:id="@+id/pointone"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="50sp"
+            android:layout_height="wrap_content"
+            android:text=" Be aware of the official cyclone warning by listening to the radio or other authentic sources.
+Install storm shutters or board up glass windows.
+Keep all the doors and windows closed.
+\n\n\n
+Do not go near loose electric wires.
+Avoid going to areas covered with floodwater.
+Stay away from sewerage lines, gutters and drains.
+\n\n\n
+If you are asked to evacuate, do not hesitate. Move to a house built on high grounds.
+Do not move outside the house immediately after the eye passes, as there will be wind gusts from the opposite direction.
+"
+            />
+
+    </ScrollView>
+
+
+</RelativeLayout>

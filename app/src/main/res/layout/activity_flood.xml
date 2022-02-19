@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".flood">
+
+
+
+
+
+<ImageView
+
+android:id="@+id/imageView"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.0"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent"
+app:layout_constraintVertical_bias="0.000
+"
+app:srcCompat="@drawable/flood" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/imageView">
+
+       <TextView
+           android:id="@+id/pointone"
+           android:layout_width="match_parent"
+           android:layout_marginLeft="50sp"
+           android:layout_height="wrap_content"
+           android:text=" Do not go in the flood-prone zone or leave your home if there is any flood forecast.
+Install check valves in sewer pipes to prevent floodwater from entering the drains of your home.
+\n\n\n
+Keep the drainage system of your house clean and out of any blockage.
+Unplug electrical gadgets and machinery and keep away from the reach of water.
+Store enough food and drinking water with you.
+\n\n\n
+Turn off gas valves and connected devices.
+Move family and pets in the safe zone.
+Keep the first aid box with necessary medicines with you.
+You may put sandbags in drains to obstruct the entry of floodwater.
+"
+           />
+
+    </ScrollView>
+
+
+</RelativeLayout>

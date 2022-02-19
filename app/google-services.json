@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "278944410326",
+    "project_id": "health-care-69e27",
+    "storage_bucket": "health-care-69e27.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:278944410326:android:59dd11af9370ebdf10b777",
+        "android_client_info": {
+          "package_name": "com.aniket.healthcare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "278944410326-rfro3ljl2b2ff2iodhqrgv5khqd4gqk6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0FDDD0R4Y7TFfK9KnABL1UJJCXI2hFe8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "278944410326-rfro3ljl2b2ff2iodhqrgv5khqd4gqk6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
