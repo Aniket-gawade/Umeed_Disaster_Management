@@ -3,7 +3,9 @@
 ### Overview
 
 Umeed is a Disaster Management Application which can help people in distress due to natural disasters such as earthquakes, landslides, fires, etc. 
+
 Our app is based on the following philosophy that the disaster management is done in following four phases – mitigation, preparedness, response and recovery.
+
 The app has a simple and beautiful UI and is packed with features so in any situation the victim doesn’t have to waste any time in getting the required help .
 
 The features of the app include :
@@ -36,3 +38,9 @@ Sending Messages / Calls via SOS
 </table>
 
 ### Demo video
+
+
+
+https://user-images.githubusercontent.com/60391607/156617100-1b652073-430c-4d2c-bc3a-34d05f9dc729.mp4
+
+
