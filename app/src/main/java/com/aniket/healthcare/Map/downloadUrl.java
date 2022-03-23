@@ -1,4 +1,4 @@
-package com.aniket.healthcare;
+package com.aniket.healthcare.Map;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.aniket.healthcare;
+package com.aniket.healthcare.Login;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -17,7 +17,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.auth.api.Auth;
+import com.aniket.healthcare.DashBoard;
+import com.aniket.healthcare.DbUser;
+import com.aniket.healthcare.R;
+import com.aniket.healthcare.User;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -31,8 +34,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
-
-import java.util.jar.Attributes;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -124,7 +125,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 });
 
 
-                                startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
+                                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                             }
                         }
                     });
@@ -219,7 +220,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void updateUI(FirebaseUser fUser){
 
-        Intent intToHome = new Intent(RegisterActivity.this,DashBoard.class);
+        Intent intToHome = new Intent(RegisterActivity.this, DashBoard.class);
         startActivity(intToHome);
 
     }

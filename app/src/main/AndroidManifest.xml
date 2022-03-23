@@ -52,19 +52,19 @@
             android:name=".CameraActivity"
             android:exported="true" />
         <activity
-            android:name=".LoginActivity_Dr"
+            android:name=".Login.LoginActivity_Dr"
             android:exported="true" />
         <activity
-            android:name=".ForgotPassword"
+            android:name=".Login.ForgotPassword"
             android:exported="true" />
         <activity android:name=".DashBoard" />
         <activity android:name=".activity_earthquake" />
         <activity android:name=".cyclone" />
         <activity android:name=".flood" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".MapsActivity" />
+        <activity android:name=".Map.MapsActivity" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Login.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -73,7 +73,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RegisterActivity"
+            android:name=".Login.RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 

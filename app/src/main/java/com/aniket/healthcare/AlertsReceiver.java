@@ -3,6 +3,10 @@ package com.aniket.healthcare;
 
 import android.util.Log;
 import android.os.AsyncTask;
+
+import com.aniket.healthcare.Map.dataParser;
+import com.aniket.healthcare.Map.downloadUrl;
+
 import java.io.IOException;
 
 //Network Managers
