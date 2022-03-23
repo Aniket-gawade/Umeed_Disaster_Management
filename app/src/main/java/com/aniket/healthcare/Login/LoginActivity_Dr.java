@@ -1,4 +1,4 @@
-package com.aniket.healthcare;
+package com.aniket.healthcare.Login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import com.aniket.healthcare.R;
 
 public class LoginActivity_Dr extends AppCompatActivity {
 

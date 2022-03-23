@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.aniket.healthcare.Login.LoginActivity;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -45,7 +46,7 @@ public class DashBoard extends AppCompatActivity {
                 GoogleSignInClient googleSignInClient= GoogleSignIn.getClient(DashBoard.this,gso);
                 googleSignInClient.signOut();
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(DashBoard.this,LoginActivity.class));
+                startActivity(new Intent(DashBoard.this, LoginActivity.class));
                 finish();
             }
         });

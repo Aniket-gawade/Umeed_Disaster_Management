@@ -1,8 +1,7 @@
-package com.aniket.healthcare;
+package com.aniket.healthcare.Login;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -18,12 +17,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.facebook.AccessToken;
-import com.facebook.CallbackManager;
-import com.facebook.FacebookCallback;
-import com.facebook.FacebookException;
-import com.facebook.login.LoginManager;
-import com.facebook.login.LoginResult;
+import com.aniket.healthcare.MainActivity;
+import com.aniket.healthcare.R;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -35,12 +30,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
-
-import java.util.Arrays;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -125,7 +117,7 @@ public class LoginActivity extends AppCompatActivity {
                             else{
                                 password.getText().clear();
                                 emailId.getText().clear();
-                                Intent intToHome = new Intent(LoginActivity.this,MainActivity.class);
+                                Intent intToHome = new Intent(LoginActivity.this, MainActivity.class);
                                 startActivity(intToHome);
                                 finish();
                                 pd.dismiss();

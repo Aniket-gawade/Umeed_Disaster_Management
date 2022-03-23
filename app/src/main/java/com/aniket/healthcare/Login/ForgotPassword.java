@@ -1,4 +1,4 @@
-package com.aniket.healthcare;
+package com.aniket.healthcare.Login;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.aniket.healthcare.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -48,7 +49,7 @@ public class ForgotPassword extends AppCompatActivity {
                                     }
                                     else {
                                         Toast.makeText(ForgotPassword.this,"Check Your Email!",Toast.LENGTH_SHORT).show();
-                                        startActivity(new Intent(ForgotPassword.this,LoginActivity.class));
+                                        startActivity(new Intent(ForgotPassword.this, LoginActivity.class));
                                         finish();
                                     }
                                 }

@@ -37,7 +37,7 @@
         android:layout_marginTop="45dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        tools:context=".MapsActivity" />
+        tools:context=".Map.MapsActivity" />
 
     <RelativeLayout
         android:id="@+id/second_relative_layout"
