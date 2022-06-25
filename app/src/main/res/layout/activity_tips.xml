@@ -11,7 +11,7 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+        android:layout_marginTop="50px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.000
 "
-        app:srcCompat="@drawable/disaster" />
+        app:srcCompat="@drawable/safety_tips" />
 
     <ListView
 
@@ -27,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="323dp"
         android:layout_below="@+id/imageView"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="78dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -35,21 +35,5 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="1.0" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="163dp"
-        android:layout_marginLeft="163dp"
-        android:layout_marginEnd="154dp"
-        android:layout_marginRight="154dp"
-        android:layout_marginBottom="92dp"
-        android:onClick="function"
-        android:text="Button" />
 
 </RelativeLayout>

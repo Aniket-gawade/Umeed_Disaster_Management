@@ -63,6 +63,7 @@
         <activity android:name=".flood" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Map.MapsActivity" />
+        <activity android:name=".aid_fragment" />
         <activity
             android:name=".Login.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">

@@ -6,21 +6,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:background="@color/browser_actions_bg_grey"
     tools:context=".sos">
 
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/imageView"
-        android:src="@drawable/help"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:src="@drawable/help" />
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="450dp"
+        android:layout_alignParentBottom="true"
         android:orientation="vertical">
 
 
@@ -29,30 +29,62 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:background="#ffffff"
             android:gravity="top"
             android:hint="Enter message"
             android:inputType="textMultiLine"
             android:minLines="6"
             android:padding="12dp" />
 
-
-        <Button
-            android:id="@+id/send_btn"
-            android:layout_width="167dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            android:backgroundTint="@android:color/holo_green_dark"
-            android:text="Send Messages"
+            android:orientation="horizontal"
+            >
 
-            android:textColor="@android:color/white" />
+            <Button
+                android:id="@+id/send_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:backgroundTint="@android:color/holo_green_dark"
+                android:text="Send Messages"
+                android:layout_margin="10dp"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/send_btn2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_margin="10dp"
+                android:backgroundTint="@android:color/holo_green_dark"
+                android:text="Send Location"
+
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+<!--                <Button-->
+<!--                    android:id="@+id/send_btn"-->
+<!--                    android:layout_width="167dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    android:layout_marginTop="15dp"-->
+<!--                    android:layout_marginBottom="15dp"-->
+<!--                    android:backgroundTint="@android:color/holo_green_dark"-->
+<!--                    android:text="Send Messages"-->
+
+<!--                    android:textColor="@android:color/white" />-->
 
 
         <LinearLayout
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:orientation="horizontal"
             android:padding="16dp">
 
@@ -71,15 +103,16 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="@android:color/holo_green_dark"
                 android:text="Call now"
                 android:textColor="@android:color/white" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:orientation="horizontal"
             android:padding="16dp">
 
@@ -98,15 +131,16 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="@android:color/holo_green_dark"
                 android:text="Call now"
                 android:textColor="@android:color/white" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:orientation="horizontal"
             android:padding="16dp">
 
@@ -125,6 +159,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="@android:color/holo_green_dark"
                 android:text="Call now"
                 android:textColor="@android:color/white" />
 

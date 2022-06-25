@@ -7,15 +7,12 @@
     tools:context=".activity_earthquake">
 
 
-
-
-
     <ImageView
 
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+        android:layout_margin="100px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -33,8 +30,8 @@
         <TextView
             android:id="@+id/pointone"
             android:layout_width="match_parent"
-            android:layout_marginLeft="50sp"
             android:layout_height="wrap_content"
+            android:layout_margin="20dp"
             android:text=" If you are in a high rise building Move away from windows and outside walls.
 Stay in the building.
 DO NOT use the elevators. The electricity may go out, and the sprinkler systems may come on.
@@ -47,8 +44,7 @@ If you are in a car Stay in the car and set the parking brake. A car may jiggle 
 
 When it is safe to begin driving again, watch for hazards created by the earthquake, such as breaks in the pavement, downed utility poles and wires, rising water levels, fallen overpasses, or collapsed bridges
 
-"
-            />
+" />
 
     </ScrollView>
 

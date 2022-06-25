@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.aniket.healthcare.Login.LoginActivity;
+import com.aniket.healthcare.Map.MapsActivity;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -22,7 +23,7 @@ public class DashBoard extends AppCompatActivity {
 
     Button signout;
     TextView camera, doctor;
-    CardView tips, doctor1;
+    CardView sos, map, aid, tips;
     FirebaseAuth mFirebaseAuth;
     GoogleApiClient mGoogleApiClient;
 
@@ -32,8 +33,10 @@ public class DashBoard extends AppCompatActivity {
         setContentView(R.layout.activity_dash_board);
 
         signout = findViewById(R.id.cirLogOutButton);
-        camera = findViewById(R.id.camera);
-        tips = findViewById(R.id.btn_tips);
+        map = findViewById(R.id.map1);
+        sos = findViewById(R.id.sos);
+        aid = findViewById(R.id.first_aid);
+        tips = findViewById(R.id.safety_tips);
 
 
         signout.setOnClickListener(new View.OnClickListener() {
@@ -51,19 +54,33 @@ public class DashBoard extends AppCompatActivity {
             }
         });
 
-        tips.setOnClickListener(new View.OnClickListener() {
+        map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(DashBoard.this,Tips.class));
+                startActivity(new Intent(DashBoard.this, MapsActivity.class));
                 finish();
             }
         });
 
-        camera.setOnClickListener(new View.OnClickListener() {
+        sos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DashBoard.this, sos.class));
+            }
+        });
+
+        tips.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(DashBoard.this, Tips.class));
+            }
+        });
+
+        aid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DashBoard.this, aid_fragment.class));
             }
         });
 

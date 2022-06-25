@@ -20,18 +20,15 @@
             android:title="@string/emergency_contacts"
             android:visible="true" />
 
-
-
-            <item
-                android:id="@+id/getdatarefresh"
-                android:title="@string/get_disaster_data"
-                android:visible="true" />
             <item
                 android:id="@+id/nav_aid"
                 android:title="@string/first_aid"
                 android:visible="true" />
 
-
+        <item
+            android:id="@+id/tips"
+            android:title="@string/tips"
+            android:visible="true" />
 
 
 </group>

@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "278944410326",
+    "firebase_url": "https://health-care-69e27-default-rtdb.firebaseio.com",
     "project_id": "health-care-69e27",
     "storage_bucket": "health-care-69e27.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "278944410326-42jl46eqtl6i081r0rhnfio1egjkvvf2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aniket.healthcare",
+            "certificate_hash": "74fce2bf5a407e52a6a7a98ade139bf1ac4a8437"
+          }
+        },
         {
           "client_id": "278944410326-rfro3ljl2b2ff2iodhqrgv5khqd4gqk6.apps.googleusercontent.com",
           "client_type": 3

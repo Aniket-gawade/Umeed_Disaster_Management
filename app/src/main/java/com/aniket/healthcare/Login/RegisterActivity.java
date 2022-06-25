@@ -24,7 +24,6 @@ import com.aniket.healthcare.User;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -34,6 +33,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -47,6 +48,8 @@ public class RegisterActivity extends AppCompatActivity {
     ProgressDialog pd;
     private static final String TAG = "tag";
     private int RC_SIGN_IN = 1;
+    private DatabaseReference databaseReference;
+    private FirebaseDatabase db;
 
 
 
@@ -63,12 +66,15 @@ public class RegisterActivity extends AppCompatActivity {
         name = findViewById(R.id.editTextName);
         btnSignUp = findViewById(R.id.cirRegisterButton);
         tvSignIn = findViewById(R.id.Al_Reg);
-        gsignin = findViewById(R.id.GsignIn);
+
         emr1 = findViewById(R.id.emr1);
         emr2 = findViewById(R.id.emr2);
         emr3 = findViewById(R.id.emr3);
         pd = new ProgressDialog(this);
         pd.setMessage("Sign in ....");
+
+        db = FirebaseDatabase.getInstance();
+        databaseReference = db.getReference("User");
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,6 +116,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                                 String user_id = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
+//                                Toast.makeText(RegisterActivity.this, user_id, Toast.LENGTH_SHORT).show();
 
                                 DbUser dbUser = new DbUser();
                                 User user = new User(user_id,mob,em1,em2,em3,email)   ;
@@ -118,14 +125,15 @@ public class RegisterActivity extends AppCompatActivity {
 
                                 dbUser.add(user).addOnSuccessListener(suc ->
                                 {
-                                    Toast.makeText(RegisterActivity.this,user_id,Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(RegisterActivity.this,"Registration complete ",Toast.LENGTH_SHORT).show();
                                 }).addOnFailureListener(er->
                                 {
-                                    Toast.makeText(RegisterActivity.this,"Failed to add data",Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(RegisterActivity.this,"Failed to add data "+er.getMessage(),Toast.LENGTH_SHORT).show();
                                 });
 
 
                                 startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                                finish();
                             }
                         }
                     });
@@ -146,20 +154,24 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken("278944410326-rfro3ljl2b2ff2iodhqrgv5khqd4gqk6.apps.googleusercontent.com")
-                .requestEmail()
-                .build();
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-
-        gsignin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pd.show();
-                signIn();
-            }
-        });
+//        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+//                .requestIdToken("278944410326-rfro3ljl2b2ff2iodhqrgv5khqd4gqk6.apps.googleusercontent.com")
+//                .requestEmail()
+//                .build();
+//        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+//
+//        gsignin.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                pd.show();
+//                signIn();
+//            }
+//        });
     }
+
+//    private Task<Void> add(User user){
+//        return databaseReference.setValue(user);
+//    }
     private void changeStatusBarColor() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();

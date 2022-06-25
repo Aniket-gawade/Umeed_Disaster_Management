@@ -46,11 +46,11 @@
 
         <ImageButton
             android:id="@+id/hospitals_nearby"
-            android:layout_width="wrap_content"
+            android:layout_width="200px"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginLeft="67dp"
+            android:layout_marginLeft="10dp"
             android:onClick="onClick"
             android:src="@mipmap/hospital_mipmap"
 
@@ -59,34 +59,48 @@
 
         <ImageButton
             android:id="@+id/firestations_nearby"
-            android:layout_width="wrap_content"
+            android:layout_width="200px"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="213dp"
-            android:layout_marginBottom="-3dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="-68dp"
 
-            android:layout_toEndOf="@+id/hospitals_nearby"
+            android:layout_marginBottom="56dp"
 
+            android:layout_toRightOf="@+id/hospitals_nearby"
             android:onClick="onClick"
             android:src="@mipmap/firestation_mipmap" />
 
         <ImageButton
             android:id="@+id/police_nearby"
-            android:layout_width="wrap_content"
+            android:layout_width="200px"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="136dp"
-            android:layout_marginBottom="-2dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginBottom="120dp"
 
             android:layout_toEndOf="@+id/firestations_nearby"
 
             android:onClick="onClick"
             android:src="@mipmap/police_mipmap" />
+
+        <ImageButton
+            android:id="@+id/my_location"
+            android:layout_width="200px"
+            android:layout_height="180px"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="-74dp"
+
+            android:layout_marginBottom="179dp"
+
+            android:layout_toRightOf="@id/firestations_nearby"
+            android:onClick="onClick"
+            android:src="@mipmap/gps" />
     </RelativeLayout>
-
-
 
 
 </RelativeLayout>
