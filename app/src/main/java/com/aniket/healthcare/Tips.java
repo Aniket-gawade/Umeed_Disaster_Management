@@ -56,8 +56,4 @@ public class Tips extends AppCompatActivity {
 
     }
 
-    public void function(View v){
-//        Intent i=new Intent(Tips.this,userMap.class);
-
-    }
 }

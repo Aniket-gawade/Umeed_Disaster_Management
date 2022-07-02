@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.LauncherActivity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -19,6 +20,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.aniket.healthcare.Map.GpsTracker;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -36,8 +38,8 @@ public class sos extends AppCompatActivity {
     TextView callNo1,callNo2,callNo3;
 
     EditText message;
-    Button send_btn,callBtn1,callBtn2,callBtn3;
-
+    Button send_btn1, send_btn2,callBtn1,callBtn2,callBtn3;
+    private GpsTracker gpsTracker;
     String contactNo1,contactNo2,contactNo3;
 
     @Override
@@ -47,8 +49,8 @@ public class sos extends AppCompatActivity {
 
         //messaging
         message = findViewById(R.id.message);
-        send_btn = findViewById(R.id.send_btn);
-
+        send_btn1 = findViewById(R.id.send_btn);
+        send_btn2 = findViewById(R.id.send_btn2);
         //calling
         callBtn1 = findViewById(R.id.callBtn1);
         callBtn2 = findViewById(R.id.callBtn2);
@@ -59,12 +61,29 @@ public class sos extends AppCompatActivity {
         callNo3 = findViewById(R.id.callNo3);
 
 
-        send_btn.setOnClickListener(new View.OnClickListener() {
+        send_btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(ContextCompat.checkSelfPermission(sos.this
                         ,Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED){
                     sendSMS();
+                }
+                else{
+                    ActivityCompat.requestPermissions(sos.this,
+                            new String[]{Manifest.permission.SEND_SMS},100);
+
+                }
+            }
+        });
+
+
+
+        send_btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ContextCompat.checkSelfPermission(sos.this
+                        ,Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED){
+                    sendSMS2();
                 }
                 else{
                     ActivityCompat.requestPermissions(sos.this,
@@ -96,7 +115,7 @@ public class sos extends AppCompatActivity {
             }
         });
 
-        Toast.makeText(sos.this,UserId,Toast.LENGTH_SHORT).show();
+//        Toast.makeText(sos.this,UserId,Toast.LENGTH_SHORT).show();
 
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
@@ -163,6 +182,47 @@ public class sos extends AppCompatActivity {
 
     }
 
+    private void sendSMS2() {
+        gpsTracker = new GpsTracker(sos.this);
+        if(gpsTracker.canGetLocation()){
+            double latitude = gpsTracker.getLatitude();
+            double longitude = gpsTracker.getLongitude();
+
+            String t = "Emergency SOS, This is my current location: ";
+            StringBuffer mssg = new StringBuffer();
+            mssg.append("http://maps.google.com?q=");
+            mssg.append(latitude);
+            mssg.append(",");
+            mssg.append(longitude);
+
+            SmsManager smsManager = SmsManager.getDefault();
+
+            if(!contactNo1.equals("") && !mssg.equals("")){
+
+                smsManager.sendTextMessage(contactNo1,null,t+mssg.toString(),null,null);
+
+                Toast.makeText(getApplicationContext(),"SOS Message 1 sent successfully",Toast.LENGTH_LONG).show();
+            }
+            if(!contactNo2.equals("") && !mssg.equals("")){
+
+                smsManager.sendTextMessage(contactNo2,null,t+mssg.toString(),null,null);
+
+                Toast.makeText(getApplicationContext(),"SOS Message 2 sent successfully",Toast.LENGTH_LONG).show();
+            }
+            if(!contactNo3.equals("") && !mssg.equals("")){
+
+                smsManager.sendTextMessage(contactNo3,null,t+mssg.toString(),null,null);
+
+                Toast.makeText(getApplicationContext(),"SOS Message 3 sent successfully",Toast.LENGTH_LONG).show();
+            }
+
+
+            else{
+                Toast.makeText(getApplicationContext(),"Failed to send message",Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+
     private void CallButton1(){
 
         if(ContextCompat.checkSelfPermission(sos.this,Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
@@ -227,7 +287,7 @@ public class sos extends AppCompatActivity {
         }
 
         else{
-            //Toast.makeText(getApplicationContext(), "Permission Denied", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Permission Denied", Toast.LENGTH_SHORT).show();
         }
     }
 }

@@ -9,6 +9,7 @@
     <string name="mapopt">Map</string>
     <string name="emergency_contacts">Emergency Contacts</string>
     <string name="first_aid">First Aid</string>
+    <string name="tips">Safety Tips</string>
     <string name="get_disaster_data">Get Disaster Data</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

@@ -3,6 +3,7 @@ import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.aniket.healthcare.DashBoard;
 import com.aniket.healthcare.R;
 import com.aniket.healthcare.databinding.ActivityMapsBinding;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -131,17 +133,9 @@ googleurl.append("&type="+s);
                 transferdata[0]=mMap;
                 transferdata[1]=url;
                 getNearbyPlaces.execute(transferdata);
-                Toast.makeText(this,"seaching for nearby hospital",Toast.LENGTH_LONG).show();
+                //Toast.makeText(this,"seaching for nearby hospital",Toast.LENGTH_LONG).show();
                 Toast.makeText(this,"showing nearby hospital",Toast.LENGTH_LONG).show();
                 break;
-
-
-
-
-
-
-
-
 
 
             case R.id.firestations_nearby:
@@ -150,18 +144,9 @@ googleurl.append("&type="+s);
                 transferdata[0]=mMap;
                 transferdata[1]=url1;
                 getNearbyPlaces.execute(transferdata);
-                Toast.makeText(this,"seaching for nearby policeStation",Toast.LENGTH_LONG).show();
-                Toast.makeText(this,"showing nearby police Station",Toast.LENGTH_LONG).show();
+                //Toast.makeText(this,"seaching for nearby policeStation",Toast.LENGTH_LONG).show();
+                Toast.makeText(this,"showing nearby Fire Station",Toast.LENGTH_LONG).show();
                 break;
-
-
-
-
-
-
-
-
-
 
 
             case R.id.police_nearby:
@@ -170,15 +155,15 @@ googleurl.append("&type="+s);
                 transferdata[0]=mMap;
                 transferdata[1]=url2;
                 getNearbyPlaces.execute(transferdata);
-                Toast.makeText(this,"seaching for nearby fireStation",Toast.LENGTH_LONG).show();
-                Toast.makeText(this,"showing nearby fireStation",Toast.LENGTH_LONG).show();
+//                Toast.makeText(this,"seaching for nearby Police Station",Toast.LENGTH_LONG).show();
+                Toast.makeText(this,"showing nearby Police Station",Toast.LENGTH_LONG).show();
                 break;
 
 
-
-
-
-
+            case R.id.my_location:
+                mMap.clear();
+                getCurrentLocation();
+                break;
 
         }
 
@@ -218,7 +203,7 @@ googleurl.append("&type="+s);
             public void onSuccess(@NonNull Location location) {
                 if (location != null) {
                     currentLocation = location;
-                    Toast.makeText(getApplicationContext(),"This is my Toast message!", (int)Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(),"This is my Toast message!", (int)Toast.LENGTH_LONG).show();
                     SupportMapFragment supportMapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
                     //assert supportMapFragment != null;
                     supportMapFragment.getMapAsync(MapsActivity.this);
@@ -236,7 +221,6 @@ googleurl.append("&type="+s);
 
                 if (locationResult == null) {
                     Toast.makeText(getApplicationContext(),"current location is null ", Toast.LENGTH_LONG).show();
-
                     return;
                 }
                 for (Location location : locationResult.getLocations()) {
@@ -264,5 +248,10 @@ googleurl.append("&type="+s);
         }
     }
 
-
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(MapsActivity.this, DashBoard.class);
+        startActivity(i);
+        finish();
+    }
 }

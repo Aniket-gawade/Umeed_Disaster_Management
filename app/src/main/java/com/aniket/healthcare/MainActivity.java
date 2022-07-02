@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolBar);
+
         setSupportActionBar(toolbar);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -70,16 +71,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent intent2 = new Intent(MainActivity.this, sos.class);
             startActivity(intent2);
         }
-        else if (id == R.id.getdatarefresh) {
-            Intent intent2 = new Intent(this, AlarmReceiver.class);
-            intent2.putExtra("Latitude", lat);
-            intent2.putExtra("Longitude", lon);
-            PendingIntent pendingIntent2 = PendingIntent.getBroadcast(this, 234324244, intent2, PendingIntent.FLAG_UPDATE_CURRENT);
-            AlarmManager alarmManager2 = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
-            alarmManager2.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + (1000), pendingIntent2); //7 seconds after pressing the button
+        else if (id == R.id.tips) {
+            Intent intent2 = new Intent(MainActivity.this, Tips.class);
+            startActivity(intent2);
         }
         else if (id == R.id.nav_aid) {
-            fm.beginTransaction().replace(R.id.content_frame, new aid_fragment()).commit();
+            Intent intent2 = new Intent(MainActivity.this, aid_fragment.class);
+            startActivity(intent2);
         }
 
 

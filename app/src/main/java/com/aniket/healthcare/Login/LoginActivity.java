@@ -17,6 +17,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.aniket.healthcare.DashBoard;
 import com.aniket.healthcare.MainActivity;
 import com.aniket.healthcare.R;
 import com.google.android.gms.auth.api.Auth;
@@ -64,7 +65,6 @@ public class LoginActivity extends AppCompatActivity {
         btnSignIn = findViewById(R.id.cirLoginButton);
         tvSignUp = findViewById(R.id.New_User);
         forgotPass = findViewById(R.id.forgot);
-        gsign = findViewById(R.id.GsignIn);
         pd = new ProgressDialog(this);
         pd.setMessage("Sign in ....");
 
@@ -117,7 +117,7 @@ public class LoginActivity extends AppCompatActivity {
                             else{
                                 password.getText().clear();
                                 emailId.getText().clear();
-                                Intent intToHome = new Intent(LoginActivity.this, MainActivity.class);
+                                Intent intToHome = new Intent(LoginActivity.this, DashBoard.class);
                                 startActivity(intToHome);
                                 finish();
                                 pd.dismiss();
@@ -154,25 +154,25 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken("278944410326-rfro3ljl2b2ff2iodhqrgv5khqd4gqk6.apps.googleusercontent.com")
-                .requestEmail()
-                .build();
-        mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
-                .build();
-        mGoogleApiClient.connect();
-        super.onStart();
-
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-
-        gsign.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pd.show();
-                signIn();
-            }
-        });
+//        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+//                .requestIdToken("278944410326-rfro3ljl2b2ff2iodhqrgv5khqd4gqk6.apps.googleusercontent.com")
+//                .requestEmail()
+//                .build();
+//        mGoogleApiClient = new GoogleApiClient.Builder(this)
+//                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+//                .build();
+//        mGoogleApiClient.connect();
+//        super.onStart();
+//
+//        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+//
+//        gsign.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                pd.show();
+//                signIn();
+//            }
+//        });
 
 
 
@@ -283,7 +283,7 @@ public class LoginActivity extends AppCompatActivity {
     private void updateUI(FirebaseUser fUser){
 
         if(fUser != null) {
-            Intent intToHome = new Intent(LoginActivity.this, MainActivity.class);
+            Intent intToHome = new Intent(LoginActivity.this, DashBoard.class);
             startActivity(intToHome);
             finish();
         }
