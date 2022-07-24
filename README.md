@@ -10,7 +10,7 @@ The app has a simple and beautiful UI and is packed with features so in any situ
 
 The features of the app include :
 
-Authentication of users and storing user coordinates
+Authentication of users and storing user details
 Marker of user’s current location on Google Map 
 Markers of hospitals and other emergency units in the vicinity of the user
 Important information of various disasters
